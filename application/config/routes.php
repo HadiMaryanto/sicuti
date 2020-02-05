@@ -17,6 +17,11 @@ $route['cuti/setujuikep/(:any)'] = 'CutiController/kepbid_setujui/$1';
 $route['cuti/tolakpim/(:any)'] = 'CutiController/pimpinan_tolak/$1';
 $route['cuti/tolakkep/(:any)'] = 'CutiController/kepbid_tolak/$1';
 $route['cuti/cetak/(:any)'] = 'CutiController/cetak/$1';
+$route['cuti/lihat/(:any)'] = 'CutiController/lihat/$1';
+
+$route['lapCuti'] = 'CutiController/laporan';
+
+$route['lapIzin'] = 'IzinController/laporan';
 
 $route['izin'] = 'IzinController/index';
 $route['izin/tambah'] = 'IzinController/tambah';
@@ -24,7 +29,7 @@ $route['izin/setujuipim/(:any)'] = 'IzinController/pimpinan_setujui/$1';
 $route['izin/setujuikep/(:any)'] = 'IzinController/kepbid_setujui/$1';
 $route['izin/tolakpim/(:any)'] = 'IzinController/pimpinan_tolak/$1';
 $route['izin/tolakkep/(:any)'] = 'IzinController/kepbid_tolak/$1';
-$route['izin/cetak/(:any)'] = 'IzinController/cetak/$1';
+$route['izin/lihat/(:any)'] = 'IzinController/lihat/$1';
 
 $route['pegawai'] = 'PegawaiController/index';
 $route['pegawai/tambah'] = 'PegawaiController/tambah';

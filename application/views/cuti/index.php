@@ -53,14 +53,14 @@
 
         <?php
         $totalhari = 0;
+        $jenis = null;
         foreach ($batasHari as $key => $jumlah) {
           if (strpos($this->session->userdata('user_level'),'pegawai') !== false){
             if ($jumlah['pegawai_id'] == $this->session->userdata('user_pegawai_id')) {
+              $jenis = $jumlah['cuti_jenis'];
               if ($jumlah['cuti_jenis'] == 'Cuti Tahunan') {
                 $totalhari = $totalhari + $jumlah['cuti_selama'];
               ?>
-
-
           <?php }
             }
           }
@@ -151,7 +151,8 @@
                       <td><?php echo $value['cuti_status_kepala_bidang'] ?></td>
                       <td>
                         <?php if ($value['cuti_status_pimpinan'] == "disetujui" && $value['cuti_status_kepala_bidang'] == "disetujui"): ?>
-                            <a type="button" class="btn btn-warning" href="<?php echo base_url("cuti/cetak/".$value['pegawai_id'])?>">Cetak</a><br>
+                            <a type="button" class="btn btn-primary" href="<?php echo base_url("cuti/lihat/".$value['cuti_id'])?>">Lihat</a><br>
+                            <a type="button" class="btn btn-warning" href="<?php echo base_url("cuti/cetak/".$value['cuti_id'])?>">Cetak</a><br>
                         <?php endif; ?>
                       </td>
                     </tr>

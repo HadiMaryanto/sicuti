@@ -95,7 +95,7 @@
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">Main</li>
-						<li class="dropdown active"><a href="#" class="nav-link has-dropdown"><i
+						<li class="dropdown active"><a href="<?php echo base_url('dashboard') ?>" class="nav-link"><i
 									data-feather="monitor"></i><span>Dashboard</span>
 							</a>
 						</li>
@@ -113,12 +113,35 @@
 							</ul>
 						</li>
 						<?php endif; ?>
-						<li class="dropdown"><a href="<?php echo base_url('cuti') ?>" ><i
-									data-feather="command"></i><span>Cuti</span></a>
-						</li>
-						<li class="dropdown"><a href="<?php echo base_url('izin') ?>" ><i
-									data-feather="command"></i><span>Izin</span></a>
-						</li>
+
+						<?php if ($this->session->userdata['user_level'] == 'pimpinan'): ?>
+							<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
+										data-feather="credit-card"></i><span>Persetujuan</span></a>
+								<ul class="dropdown-menu">
+									<li><a class="nav-link" href="<?php echo base_url('cuti'); ?>">Cuti</a></li>
+									<li><a class="nav-link" href="<?php echo base_url('izin'); ?>">Izin</a></li>
+								</ul>
+							</li>
+						<?php endif; ?>
+
+						<?php if ($this->session->userdata['user_level'] != 'admin' && $this->session->userdata['user_level'] != 'pimpinan'): ?>
+							<li class="dropdown"><a href="<?php echo base_url('cuti') ?>" ><i
+										data-feather="command"></i><span>Cuti</span></a>
+							</li>
+							<li class="dropdown"><a href="<?php echo base_url('izin') ?>" ><i
+										data-feather="command"></i><span>Izin</span></a>
+							</li>
+						<?php endif; ?>
+
+						<?php if ($this->session->userdata['user_level'] == 'admin'): ?>
+							<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
+										data-feather="credit-card"></i><span>Laporan</span></a>
+								<ul class="dropdown-menu">
+									<li><a class="nav-link" href="<?php echo base_url('lapCuti'); ?>">Cuti</a></li>
+									<li><a class="nav-link" href="<?php echo base_url('lapIzin'); ?>">Izin</a></li>
+								</ul>
+							</li>
+						<?php endif; ?>
 					</ul>
 				</aside>
 			</div>

@@ -139,15 +139,10 @@
           if ($diff->y >= 6) {
             if ($diff2->m <= 3) {
               // var_dump($cekdate);die;
-              if ($cekdate == null) {
-                if ($validasi == null) {
-                  $this->CutiModel->simpan($data);
-                  $this->session->set_flashdata('alert', 'berhasil_tambah');
-                  redirect('cuti');
-                }else {
-                  $this->session->set_flashdata('alert', 'gagall_tambah');
-                  redirect('cuti');
-                }
+              if ($validasi == null) {
+                $this->CutiModel->simpan($data);
+                $this->session->set_flashdata('alert', 'berhasil_tambah');
+                redirect('cuti');
               }else {
                 $this->session->set_flashdata('alert', 'gagall_tambah');
                 redirect('cuti');
@@ -247,9 +242,29 @@
     }
     public function cetak($id)
     {
+      $this->load->library('mypdf');
+      $data['row'] = $this->CutiModel->lihat($id);
+      $data['kepala'] = $this->CutiModel->kepala();
       $this->load->view('templates/header');
-      $this->load->view('cuti/cetak');
+      $this->load->view('cuti/cetak',$data);
+      $this->mypdf->generate('cuti/cetak', $data, 'surat_cuti', 'A4', 'portrait');
       $this->load->view('templates/footer');
+    }
+    public function lihat($id)
+    {
+      $data['kepala'] = $this->CutiModel->kepala();
+      $data['row'] = $this->CutiModel->lihat($id);
+      $this->load->view('templates/header');
+      $this->load->view('cuti/lihat',$data);
+      $this->load->view('templates/footer');
+    }
+    public function laporan()
+    {
+      // $data['batasHari'] = $this->CutiModel->batas_id();
+      $data['cuti'] = $this->CutiModel->tampil();
+      $this->load->view("templates/header");
+      $this->load->view("cuti/laporan",$data);
+      $this->load->view("templates/footer");
     }
   }
 

@@ -28,20 +28,22 @@
         $jampengajuan = date('Y-m-d');
         // var_dump($jampengajuan);die;
 
+        $mulai = new DateTime($jamMulai);
+        $selesai = new DateTime($jamSelesai);
+        $diff = $mulai->diff($selesai)->h;
+        $a = $mulai->format('H');
+        $b = $selesai->format('H');
+
         $data = array(
           'izin_pegawai_id'=>$this->input->post('pegawai'),
           'izin_jenis'=>$this->input->post('jenisizin'),
           'izin_jam_mulai'=>$jamMulai,
           'izin_jam_selesai'=>$jamSelesai,
+          'izin_selama'=>$diff,
           'izin_tgl_pengajuan'=>$jampengajuan,
           'izin_perihal'=>$this->input->post('perihal'),
         );
 
-        $mulai = new DateTime($jamMulai);
-        $selesai = new DateTime($jamSelesai);
-        // $diff = $jamMulai->diff($selesai);
-        $a = $mulai->format('H');
-        $b = $selesai->format('H');
 
         // var_dump($a);die;
         if ($a > 7) {
@@ -100,11 +102,20 @@
       $this->session->set_flashdata('alert', 'tolak');
       redirect('izin');
     }
-    public function cetak($id)
+    public function lihat($id)
     {
+      $data['kepala'] = $this->IzinModel->kepala();
+      $data['row'] = $this->IzinModel->lihat($id);
       $this->load->view('templates/header');
-      $this->load->view('izin/cetak');
+      $this->load->view('izin/lihat',$data);
       $this->load->view('templates/footer');
+    }
+    public function laporan()
+    {
+      $data['izin'] = $this->IzinModel->tampil();
+      $this->load->view("templates/header");
+      $this->load->view("izin/laporan",$data);
+      $this->load->view("templates/footer");
     }
   }
 
