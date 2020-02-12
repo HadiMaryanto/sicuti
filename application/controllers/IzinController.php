@@ -44,7 +44,6 @@
           'izin_perihal'=>$this->input->post('perihal'),
         );
 
-
         // var_dump($a);die;
         if ($a > 7) {
           if ($a < 16 && $b < 16 ) {
@@ -104,6 +103,53 @@
     }
     public function lihat($id)
     {
+      $user1 = 'perencanaan';
+      $user2 = 'organisasi';
+      $user3 = 'informasi';
+      $user4 = 'hukum';
+      $user5 = 'umum';
+      $user6 = 'pendidikan madrasah';
+      $user7 = 'pendidikan keagamaan';
+      $user8 = 'haji dan umrah';
+      $user9 = 'urusan agama';
+      $user10 = 'penerangan agama';
+      $user11 = 'masyarakat kristen';
+      $user12 = 'masyarakat hindu';
+      $user13 = 'masyarakat katolik';
+      $user14 = 'masyarakat budha';
+
+      $userA = $this->IzinModel->userA($user1);
+      $userB = $this->IzinModel->userB($user2);
+      $userC = $this->IzinModel->userC($user3);
+      $userD = $this->IzinModel->userD($user4);
+      $userE = $this->IzinModel->userE($user5);
+      $userF = $this->IzinModel->userF($user6);
+      $userG = $this->IzinModel->userG($user7);
+      $userH = $this->IzinModel->userH($user8);
+      $userI = $this->IzinModel->userI($user9);
+      $userJ = $this->IzinModel->userJ($user10);
+      $userK = $this->IzinModel->userK($user11);
+      $userL = $this->IzinModel->userL($user12);
+      $userM = $this->IzinModel->userM($user13);
+      $userN = $this->IzinModel->userN($user14);
+
+      $data['userA'] = $userA;
+      $data['userB'] = $userB;
+      $data['userC'] = $userC;
+      $data['userD'] = $userD;
+      $data['userE'] = $userE;
+      $data['userF'] = $userF;
+      $data['userG'] = $userG;
+      $data['userH'] = $userH;
+      $data['userI'] = $userI;
+      $data['userJ'] = $userJ;
+      $data['userK'] = $userK;
+      $data['userL'] = $userL;
+      $data['userM'] = $userM;
+      $data['userN'] = $userN;
+
+      // var_dump($data);die;
+
       $data['kepala'] = $this->IzinModel->kepala();
       $data['row'] = $this->IzinModel->lihat($id);
       $this->load->view('templates/header');
@@ -116,6 +162,62 @@
       $this->load->view("templates/header");
       $this->load->view("izin/laporan",$data);
       $this->load->view("templates/footer");
+    }
+
+    public function cetak($id)
+    {
+      $this->load->library('mypdf');
+      $user1 = 'perencanaan';
+      $user2 = 'organisasi';
+      $user3 = 'informasi';
+      $user4 = 'hukum';
+      $user5 = 'umum';
+      $user6 = 'pendidikan madrasah';
+      $user7 = 'pendidikan keagamaan';
+      $user8 = 'haji dan umrah';
+      $user9 = 'urusan agama';
+      $user10 = 'penerangan agama';
+      $user11 = 'masyarakat kristen';
+      $user12 = 'masyarakat hindu';
+      $user13 = 'masyarakat katolik';
+      $user14 = 'masyarakat budha';
+
+      $userA = $this->IzinModel->userA($user1);
+      $userB = $this->IzinModel->userB($user2);
+      $userC = $this->IzinModel->userC($user3);
+      $userD = $this->IzinModel->userD($user4);
+      $userE = $this->IzinModel->userE($user5);
+      $userF = $this->IzinModel->userF($user6);
+      $userG = $this->IzinModel->userG($user7);
+      $userH = $this->IzinModel->userH($user8);
+      $userI = $this->IzinModel->userI($user9);
+      $userJ = $this->IzinModel->userJ($user10);
+      $userK = $this->IzinModel->userK($user11);
+      $userL = $this->IzinModel->userL($user12);
+      $userM = $this->IzinModel->userM($user13);
+      $userN = $this->IzinModel->userN($user14);
+
+      $data['userA'] = $userA;
+      $data['userB'] = $userB;
+      $data['userC'] = $userC;
+      $data['userD'] = $userD;
+      $data['userE'] = $userE;
+      $data['userF'] = $userF;
+      $data['userG'] = $userG;
+      $data['userH'] = $userH;
+      $data['userI'] = $userI;
+      $data['userJ'] = $userJ;
+      $data['userK'] = $userK;
+      $data['userL'] = $userL;
+      $data['userM'] = $userM;
+      $data['userN'] = $userN;
+
+      $data['row'] = $this->IzinModel->lihat($id);
+      $data['kepala'] = $this->IzinModel->kepala();
+      $this->load->view('templates/header');
+      $this->load->view('izin/cetak',$data);
+      $this->mypdf->generate('izin/cetak', $data, 'surat_cuti', 'A4', 'portrait');
+      $this->load->view('templates/footer');
     }
   }
 

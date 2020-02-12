@@ -112,6 +112,134 @@
     {
       $this->db->from('sicuti_user');
       $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_jabatan', 'sicuti_jabatan.jabatan_id = sicuti_pegawai.pegawai_jabatan_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userA($user1)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user1);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userB($user2)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user2);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userC($user3)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user3);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userD($user4)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user4);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userE($user5)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user5);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userF($user6)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user6);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userG($user7)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user7);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userH($user8)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user8);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userI($user9)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user9);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userJ($user10)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user10);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userK($user11)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user11);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userL($user12)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user12);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userM($user13)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user13);
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+    public function userN($user14)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->join('sicuti_pegawai', 'sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $this->db->where('user_level',$user14);
       $query = $this->db->get();
       return $query->row_array();
     }

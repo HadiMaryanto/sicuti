@@ -47,10 +47,6 @@
           <a href="<?php echo base_url('cuti/tambah')  ?>" class="btn btn-primary">Tambah</a><hr>
         <?php endif; ?>
 
-        <p><div class="badge badge-success">
-          Jatah Cuti Tahunan : <?php $jatah = 12; echo $jatah; ?>
-        </div></p>
-
         <?php
         $totalhari = 0;
         $jenis = null;
@@ -66,23 +62,29 @@
           }
         }
         ?>
-        <p><div class="badge badge-primary">
-          Cuti Tahunan Terpakai: <?php echo $totalhari; ?>
-        </div></p>
-        <p><div class="badge badge-danger">
-          Sisa Cuti Tahunan : <?php echo $sisa = $jatah - $totalhari; ?>
-        </div>
-        <?php
-          if ($sisa <= 3) { ?>
-            <div class="badge badge-warning">
-                <div>
-                  ingat jatah cuti mau habis
-                </div>
-            </div>
-          <?php  } ?>
-      </p>
+        <?php if (strpos($this->session->userdata('user_level'),'pegawai') === false): ?>
 
-
+          <?php else: ?>
+            <p><div class="badge badge-success">
+                Jatah Cuti Tahunan : <?php $jatah = 12; echo $jatah; ?>
+            </div></p>
+          <p><div class="badge badge-primary">
+            Cuti Tahunan Terpakai: <?php echo $totalhari; ?>
+          </div></p>
+          <p><div class="badge badge-danger">
+            Sisa Cuti Tahunan : <?php echo $sisa = $jatah - $totalhari; ?>
+          </div>
+          <?php
+            if ($sisa <= 3) { ?>
+              <div class="badge badge-warning">
+                  <div>
+                    ingat jatah cuti mau habis
+                  </div>
+              </div>
+            <?php  } ?>
+        </p>
+        <?php endif; ?>
+          <!--  -->
         <div class="table-responsive">
           <table class="table table-striped table-responsive" id="table-1">
             <thead>

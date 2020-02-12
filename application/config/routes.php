@@ -30,6 +30,7 @@ $route['izin/setujuikep/(:any)'] = 'IzinController/kepbid_setujui/$1';
 $route['izin/tolakpim/(:any)'] = 'IzinController/pimpinan_tolak/$1';
 $route['izin/tolakkep/(:any)'] = 'IzinController/kepbid_tolak/$1';
 $route['izin/lihat/(:any)'] = 'IzinController/lihat/$1';
+$route['izin/cetak/(:any)'] = 'IzinController/cetak/$1';
 
 $route['pegawai'] = 'PegawaiController/index';
 $route['pegawai/tambah'] = 'PegawaiController/tambah';

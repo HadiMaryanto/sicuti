@@ -97,6 +97,7 @@
                       <td>
                         <?php if ($value['izin_status_pimpinan'] == "disetujui" && $value['izin_status_kepala_bidang'] == "disetujui"): ?>
                             <a type="button" class="btn btn-primary" href="<?php echo base_url("izin/lihat/".$value['izin_id'])?>">Lihat</a><br>
+                            <a type="button" class="btn btn-warning" href="<?php echo base_url("izin/cetak/".$value['izin_id'])?>">Cetak</a><br>
                         <?php endif; ?>
                       </td>
                     </tr>

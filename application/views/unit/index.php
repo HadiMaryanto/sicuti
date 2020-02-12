@@ -100,6 +100,9 @@
                 <option value="Bidang Urusan Agama Islam dan Pembinaan Syariah">Bidang Urusan Agama Islam dan Pembinaan Syariah</option>
                 <option value="Bidang Penerangan Agama Islam, Zakat dan Wakaf">Bidang Penerangan Agama Islam, Zakat dan Wakaf</option>
                 <option value="Bimbingan Masyarakat Kristen">Bimbingan Masyarakat Kristen</option>
+                <option value="Bimbingan Masyarakat Budha">Bimbingan Masyarakat Budha</option>
+                <option value="Bimbingan Masyarakat Katolik">Bimbingan Masyarakat Katolik</option>
+                <option value="Bimbingan Masyarakat Hindu">Bimbingan Masyarakat Hindu</option>
               </select>
               <div class="invalid-feedback">
                 Field tidak boleh kosong

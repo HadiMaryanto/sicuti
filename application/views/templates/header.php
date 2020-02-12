@@ -114,7 +114,7 @@
 						</li>
 						<?php endif; ?>
 
-						<?php if ($this->session->userdata['user_level'] == 'pimpinan'): ?>
+						<!-- <?php if ($this->session->userdata['user_level'] == 'pimpinan'): ?>
 							<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
 										data-feather="credit-card"></i><span>Persetujuan</span></a>
 								<ul class="dropdown-menu">
@@ -122,15 +122,24 @@
 									<li><a class="nav-link" href="<?php echo base_url('izin'); ?>">Izin</a></li>
 								</ul>
 							</li>
-						<?php endif; ?>
+						<?php endif; ?> -->
 
-						<?php if ($this->session->userdata['user_level'] != 'admin' && $this->session->userdata['user_level'] != 'pimpinan'): ?>
-							<li class="dropdown"><a href="<?php echo base_url('cuti') ?>" ><i
-										data-feather="command"></i><span>Cuti</span></a>
+						<?php if (strpos($this->session->userdata('user_level'),'pegawai') === false): ?>
+							<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
+										data-feather="credit-card"></i><span>Persetujuan</span></a>
+								<ul class="dropdown-menu">
+									<li><a class="nav-link" href="<?php echo base_url('cuti'); ?>">Cuti</a></li>
+									<li><a class="nav-link" href="<?php echo base_url('izin'); ?>">Izin</a></li>
+								</ul>
 							</li>
-							<li class="dropdown"><a href="<?php echo base_url('izin') ?>" ><i
-										data-feather="command"></i><span>Izin</span></a>
-							</li>
+
+							<?php else: ?>
+								<li class="dropdown"><a href="<?php echo base_url('cuti') ?>" ><i
+											data-feather="command"></i><span>Cuti</span></a>
+								</li>
+								<li class="dropdown"><a href="<?php echo base_url('izin') ?>" ><i
+											data-feather="command"></i><span>Izin</span></a>
+								</li>
 						<?php endif; ?>
 
 						<?php if ($this->session->userdata['user_level'] == 'admin'): ?>
