@@ -120,7 +120,7 @@
           <td colspan="4"><strong style="margin-left:10px;"><?php echo $row['pegawai_alamat'] ?> </strong></td>
           <td colspan="2">
               <p style="text-align:center;"> Hormat Saya </p> <br><br>
-              <p style="text-align:center;margin-top:10px;font-weight:bold;"> <?php echo $row['pegawai_nama'] ?> </p>
+              <p style="text-align:center;margin-top:130px;font-weight:bold;"> <?php echo $row['pegawai_nama'] ?> </p>
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $row['pegawai_nip'] ?> </p>
           </td>
       </tr>
@@ -141,11 +141,32 @@
             <p style="text-align:center;"> <?php echo 'KEPALA' ?> </p> <br><br>
             <?php endif; ?>
 
-            <p style="text-align:center;margin-top:10px;font-weight:bold;"> <?php echo $kepala['pegawai_nama'] ?> </p>
+            <p style="text-align:center;margin-top:130px;font-weight:bold;"> <?php echo $kepala['pegawai_nama'] ?> </p>
             <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $kepala['pegawai_nip'] ?> </p>
           </td>
       </tr>
-      <?php if (strpos($row['user_level'],'pegawai sub perencanaan') !== false): ?>
+
+      <tr>
+          <td colspan="6"><strong style="margin-left:10px;">VII. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
+      </tr>
+
+      <tr>
+          <td colspan="2" style="text-align:center;"><strong>STATUS</strong></td>
+          <td colspan="2" style="text-align:center;"><strong><?php echo $row['izin_status_kepala_bidang'] ?></strong> </td>
+          <td colspan="2"><strong style="margin-left:10px;"></strong></td>
+      </tr>
+      <tr>
+          <td colspan="4"></td>
+          <td colspan="2">
+            <p style="text-align:center;"><?php echo $sub_pimpinan['unit_kerja'] ?></p>
+
+
+            <p style="text-align:center;margin-top:130px;font-weight:bold;"> <?php echo $sub_pimpinan['pegawai_nama'] ?> </p>
+            <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $sub_pimpinan['pegawai_nip'] ?> </p>
+          </td>
+      </tr>
+
+      <!-- <?php if (strpos($row['user_level'],'pegawai sub perencanaan') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
         </tr>
@@ -181,7 +202,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userB['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai sub informasi') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -200,7 +220,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userC['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai sub hukum') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -219,7 +238,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userD['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai sub umum') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -238,7 +256,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userE['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai pendidikan madrasah') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -257,7 +274,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userF['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai pendidikan keagamaan') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -276,7 +292,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userG['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai haji dan umrah') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -295,7 +310,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userH['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai urusan agama') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -314,7 +328,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userI['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai penerangan agama') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -333,7 +346,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userJ['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai masyarakat kristen') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -352,7 +364,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userK['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai masyarakat hindu') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -371,7 +382,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userL['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai masyarakat katolik') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -390,7 +400,6 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userM['pegawai_nip'] ?> </p>
             </td>
         </tr>
-
       <?php elseif (strpos($row['user_level'],'pegawai masyarakat budha') !== false): ?>
         <tr>
             <td colspan="6"><strong style="margin-left:10px;">VI. PERTIMBANGAN ATASAN LANGSUNG </strong></td>
@@ -409,7 +418,7 @@
               <p style="text-align:center;margin-top:10px;"> NIP . <?php echo $userN['pegawai_nip'] ?> </p>
             </td>
         </tr>
-      <?php endif; ?>
+      <?php endif; ?> -->
 
   </table>
 </div>

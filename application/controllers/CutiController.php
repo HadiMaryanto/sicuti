@@ -10,6 +10,7 @@
       parent::__construct();
       $this->load->model("CutiModel");
       $this->load->model("PegawaiModel");
+      $this->load->model("AkunModel");
     }
     public function index()
     {
@@ -243,52 +244,52 @@
     }
     public function cetak($id)
     {
-      
+
       $this->load->library('mypdf');
-      $user1 = 'perencanaan';
-      $user2 = 'organisasi';
-      $user3 = 'informasi';
-      $user4 = 'hukum';
-      $user5 = 'umum';
-      $user6 = 'pendidikan madrasah';
-      $user7 = 'pendidikan keagamaan';
-      $user8 = 'haji dan umrah';
-      $user9 = 'urusan agama';
-      $user10 = 'penerangan agama';
-      $user11 = 'masyarakat kristen';
-      $user12 = 'masyarakat hindu';
-      $user13 = 'masyarakat katolik';
-      $user14 = 'masyarakat budha';
-
-      $userA = $this->CutiModel->userA($user1);
-      $userB = $this->CutiModel->userB($user2);
-      $userC = $this->CutiModel->userC($user3);
-      $userD = $this->CutiModel->userD($user4);
-      $userE = $this->CutiModel->userE($user5);
-      $userF = $this->CutiModel->userF($user6);
-      $userG = $this->CutiModel->userG($user7);
-      $userH = $this->CutiModel->userH($user8);
-      $userI = $this->CutiModel->userI($user9);
-      $userJ = $this->CutiModel->userJ($user10);
-      $userK = $this->CutiModel->userK($user11);
-      $userL = $this->CutiModel->userL($user12);
-      $userM = $this->CutiModel->userM($user13);
-      $userN = $this->CutiModel->userN($user14);
-
-      $data['userA'] = $userA;
-      $data['userB'] = $userB;
-      $data['userC'] = $userC;
-      $data['userD'] = $userD;
-      $data['userE'] = $userE;
-      $data['userF'] = $userF;
-      $data['userG'] = $userG;
-      $data['userH'] = $userH;
-      $data['userI'] = $userI;
-      $data['userJ'] = $userJ;
-      $data['userK'] = $userK;
-      $data['userL'] = $userL;
-      $data['userM'] = $userM;
-      $data['userN'] = $userN;
+      // $user1 = 'perencanaan';
+      // $user2 = 'organisasi';
+      // $user3 = 'informasi';
+      // $user4 = 'hukum';
+      // $user5 = 'umum';
+      // $user6 = 'pendidikan madrasah';
+      // $user7 = 'pendidikan keagamaan';
+      // $user8 = 'haji dan umrah';
+      // $user9 = 'urusan agama';
+      // $user10 = 'penerangan agama';
+      // $user11 = 'masyarakat kristen';
+      // $user12 = 'masyarakat hindu';
+      // $user13 = 'masyarakat katolik';
+      // $user14 = 'masyarakat budha';
+      //
+      // $userA = $this->CutiModel->userA($user1);
+      // $userB = $this->CutiModel->userB($user2);
+      // $userC = $this->CutiModel->userC($user3);
+      // $userD = $this->CutiModel->userD($user4);
+      // $userE = $this->CutiModel->userE($user5);
+      // $userF = $this->CutiModel->userF($user6);
+      // $userG = $this->CutiModel->userG($user7);
+      // $userH = $this->CutiModel->userH($user8);
+      // $userI = $this->CutiModel->userI($user9);
+      // $userJ = $this->CutiModel->userJ($user10);
+      // $userK = $this->CutiModel->userK($user11);
+      // $userL = $this->CutiModel->userL($user12);
+      // $userM = $this->CutiModel->userM($user13);
+      // $userN = $this->CutiModel->userN($user14);
+      //
+      // $data['userA'] = $userA;
+      // $data['userB'] = $userB;
+      // $data['userC'] = $userC;
+      // $data['userD'] = $userD;
+      // $data['userE'] = $userE;
+      // $data['userF'] = $userF;
+      // $data['userG'] = $userG;
+      // $data['userH'] = $userH;
+      // $data['userI'] = $userI;
+      // $data['userJ'] = $userJ;
+      // $data['userK'] = $userK;
+      // $data['userL'] = $userL;
+      // $data['userM'] = $userM;
+      // $data['userN'] = $userN;
 
       $data['row'] = $this->CutiModel->lihat($id);
       $data['kepala'] = $this->CutiModel->kepala();
@@ -299,50 +300,55 @@
     }
     public function lihat($id)
     {
-      $user1 = 'perencanaan';
-      $user2 = 'organisasi';
-      $user3 = 'informasi';
-      $user4 = 'hukum';
-      $user5 = 'umum';
-      $user6 = 'pendidikan madrasah';
-      $user7 = 'pendidikan keagamaan';
-      $user8 = 'haji dan umrah';
-      $user9 = 'urusan agama';
-      $user10 = 'penerangan agama';
-      $user11 = 'masyarakat kristen';
-      $user12 = 'masyarakat hindu';
-      $user13 = 'masyarakat katolik';
-      $user14 = 'masyarakat budha';
+      // $user1 = 'perencanaan';
+      // $user2 = 'organisasi';
+      // $user3 = 'informasi';
+      // $user4 = 'hukum';
+      // $user5 = 'umum';
+      // $user6 = 'pendidikan madrasah';
+      // $user7 = 'pendidikan keagamaan';
+      // $user8 = 'haji dan umrah';
+      // $user9 = 'urusan agama';
+      // $user10 = 'penerangan agama';
+      // $user11 = 'masyarakat kristen';
+      // $user12 = 'masyarakat hindu';
+      // $user13 = 'masyarakat katolik';
+      // $user14 = 'masyarakat budha';
+      //
+      // $userA = $this->CutiModel->userA($user1);
+      // $userB = $this->CutiModel->userB($user2);
+      // $userC = $this->CutiModel->userC($user3);
+      // $userD = $this->CutiModel->userD($user4);
+      // $userE = $this->CutiModel->userE($user5);
+      // $userF = $this->CutiModel->userF($user6);
+      // $userG = $this->CutiModel->userG($user7);
+      // $userH = $this->CutiModel->userH($user8);
+      // $userI = $this->CutiModel->userI($user9);
+      // $userJ = $this->CutiModel->userJ($user10);
+      // $userK = $this->CutiModel->userK($user11);
+      // $userL = $this->CutiModel->userL($user12);
+      // $userM = $this->CutiModel->userM($user13);
+      // $userN = $this->CutiModel->userN($user14);
+      //
+      // $data['userA'] = $userA;
+      // $data['userB'] = $userB;
+      // $data['userC'] = $userC;
+      // $data['userD'] = $userD;
+      // $data['userE'] = $userE;
+      // $data['userF'] = $userF;
+      // $data['userG'] = $userG;
+      // $data['userH'] = $userH;
+      // $data['userI'] = $userI;
+      // $data['userJ'] = $userJ;
+      // $data['userK'] = $userK;
+      // $data['userL'] = $userL;
+      // $data['userM'] = $userM;
+      // $data['userN'] = $userN;
 
-      $userA = $this->CutiModel->userA($user1);
-      $userB = $this->CutiModel->userB($user2);
-      $userC = $this->CutiModel->userC($user3);
-      $userD = $this->CutiModel->userD($user4);
-      $userE = $this->CutiModel->userE($user5);
-      $userF = $this->CutiModel->userF($user6);
-      $userG = $this->CutiModel->userG($user7);
-      $userH = $this->CutiModel->userH($user8);
-      $userI = $this->CutiModel->userI($user9);
-      $userJ = $this->CutiModel->userJ($user10);
-      $userK = $this->CutiModel->userK($user11);
-      $userL = $this->CutiModel->userL($user12);
-      $userM = $this->CutiModel->userM($user13);
-      $userN = $this->CutiModel->userN($user14);
-
-      $data['userA'] = $userA;
-      $data['userB'] = $userB;
-      $data['userC'] = $userC;
-      $data['userD'] = $userD;
-      $data['userE'] = $userE;
-      $data['userF'] = $userF;
-      $data['userG'] = $userG;
-      $data['userH'] = $userH;
-      $data['userI'] = $userI;
-      $data['userJ'] = $userJ;
-      $data['userK'] = $userK;
-      $data['userL'] = $userL;
-      $data['userM'] = $userM;
-      $data['userN'] = $userN;
+      $getData = $this->CutiModel->lihat($id);
+      $id_pegawai = $getData['cuti_pegawai_id'];
+      $hubungan = $getData['user_level_hubungan'];
+      $data['sub_pimpinan'] = $this->AkunModel->get_dinamic_data('user_level',$hubungan);
 
       $data['kepala'] = $this->CutiModel->kepala();
       $data['row'] = $this->CutiModel->lihat($id);
