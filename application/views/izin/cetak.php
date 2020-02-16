@@ -161,14 +161,14 @@
        <?php if (strpos($row['user_level'],'pegawai sub perencanaan') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userA['unit_kerja'] == 'Sub Bagian Perencanaan dan Keuangan') {
+           if ($sub_pimpinan['unit_kerja'] == 'Sub Bagian Perencanaan dan Keuangan') {
              echo "Sub Bagian Perencanaan" . "<br>" . "dan Keuangan";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai sub organisasi') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-              if ($userB['unit_kerja'] == 'Sub Bagian Organisasi, Tata Laksana, dan Kepegawaian') {
+              if ($sub_pimpinan['unit_kerja'] == 'Sub Bagian Organisasi, Tata Laksana, dan Kepegawaian') {
                 echo "Sub Bagian Organisasi" . "<br>" . "Tata Laksana dan Kepegawaian";
               }
 
@@ -176,68 +176,68 @@
        <?php elseif (strpos($row['user_level'],'pegawai sub informasi') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userC['unit_kerja'] == 'Sub Bagian Informasi dan Hubungan Masyarakat') {
+           if ($sub_pimpinan['unit_kerja'] == 'Sub Bagian Informasi dan Hubungan Masyarakat') {
              echo "Sub Bagian Informasi". "<br>". "dan Hubungan Masyarakat";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai sub hukum') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userD['unit_kerja'] == 'Sub Bagian Hukum dan Kerukunan Umat Beragama') {
+           if ($sub_pimpinan['unit_kerja'] == 'Sub Bagian Hukum dan Kerukunan Umat Beragama') {
              echo "Sub Bagian Hukum dan" . "<br>" . "Kerukunan Umat Beragama";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai sub umum') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userE['unit_kerja'] == 'Sub Bagian Umum') {
+           if ($sub_pimpinan['unit_kerja'] == 'Sub Bagian Umum') {
              echo "Sub Bagian Umum";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai pendidikan madrasah') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
           <?php
-          if ($userF['unit_kerja'] == 'Bidang Pendidikan Madrasah') {
+          if ($sub_pimpinan['unit_kerja'] == 'Bidang Pendidikan Madrasah') {
             echo "Bidang Pendidikan Madrasah";
           }
           ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai pendidikan keagamaan') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userG['unit_kerja'] == 'Bidang Pendidikan Agama dan Keagamaan Islam') {
+           if ($sub_pimpinan['unit_kerja'] == 'Bidang Pendidikan Agama dan Keagamaan Islam') {
              echo "Bidang Pendidikan Agama" . "<br>" . "dan Keagamaan Islam";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai haji dan umrah') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userH['unit_kerja'] == 'Bidang Penyelenggaraan Haji dan Umrah') {
+           if ($sub_pimpinan['unit_kerja'] == 'Bidang Penyelenggaraan Haji dan Umrah') {
              echo "Bidang Penyelenggaraan" . "<br>" . "Haji dan Umrah";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai urusan agama') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userI['unit_kerja'] == 'Bidang Urusan Agama Islam dan Pembinaan Syariah') {
+           if ($sub_pimpinan['unit_kerja'] == 'Bidang Urusan Agama Islam dan Pembinaan Syariah') {
              echo "Bidang Urusan Agama Islam" . "<br>" . "dan Pembinaan Syariah";
            }
-           echo strtoupper()
+
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai penerangan agama') !== false): ?>
          <p style="text-align:left;margin-left:80px;">
            <?php
-           if ($userJ['unit_kerja'] == 'Bidang Penerangan Agama Islam, Zakat dan Wakaf') {
+           if ($sub_pimpinan['unit_kerja'] == 'Bidang Penerangan Agama Islam, Zakat dan Wakaf') {
              echo "Bidang Penerangan Agama Islam,". "<br>" . "Zakat dan Wakaf";
            }
            ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai masyarakat kristen') !== false): ?>
-         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($userK['unit_kerja']) ?> </p>
+         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($sub_pimpinan['unit_kerja']) ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai masyarakat hindu') !== false): ?>
-         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($userL['unit_kerja']) ?> </p>
+         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($sub_pimpinan['unit_kerja']) ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai masyarakat katolik') !== false): ?>
-         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($userM['unit_kerja']) ?> </p>
+         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($sub_pimpinan['unit_kerja']) ?> </p>
        <?php elseif (strpos($row['user_level'],'pegawai masyarakat budha') !== false): ?>
-         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($userN['unit_kerja']) ?> </p>
+         <p style="text-align:left;margin-left:80px;"> <?php echo strtoupper($sub_pimpinan['unit_kerja']) ?> </p>
        <?php endif; ?>
 
     <p style="text-align:right;margin-right:80px;margin-top:-600px;"> <?php echo $row['jabatan_nama'] ?> </p> <br><br>
@@ -249,133 +249,15 @@
             </td>
         </tr>
     </table>
-    <?php if (strpos($row['user_level'],'pegawai sub perencanaan') !== false): ?>
       <table align="left">
           <tr>
               <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userA['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userA['pegawai_nip'] ?> </p>
+                  <p style="margin-left:80px;"> <b> <?php echo $sub_pimpinan['pegawai_nama'] ?> </b> <br> NIP
+                      <?php echo $sub_pimpinan['pegawai_nip'] ?> </p>
               </td>
           </tr>
       </table>
-    <?php elseif (strpos($row['user_level'],'pegawai sub organisasi') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userB['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userB['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai sub informasi') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userC['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userC['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai sub hukum') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userD['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userD['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai sub umum') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userE['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userE['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai pendidikan madrasah') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userF['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userF['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai pendidikan keagamaan') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userG['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userG['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai haji dan umrah') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userH['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userH['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai urusan agama') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userI['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userI['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai penerangan agama') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userJ['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userJ['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai masyarakat kristen') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userK['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userK['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai masyarakat hindu') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userL['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userL['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai masyarakat katolik') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userM['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userM['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php elseif (strpos($row['user_level'],'pegawai masyarakat budha') !== false): ?>
-      <table align="left">
-          <tr>
-              <td>
-                  <p style="margin-left:80px;"> <b> <?php echo $userN['pegawai_nama'] ?> </b> <br> NIP
-                      <?php echo $userN['pegawai_nip'] ?> </p>
-              </td>
-          </tr>
-      </table>
-    <?php endif; ?>
+
 </div>
 
 <p style="text-align:center;margin-top:100px;margin-right:40px;">Mengetahui : </p>

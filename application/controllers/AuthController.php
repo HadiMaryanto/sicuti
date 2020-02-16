@@ -28,14 +28,14 @@
             'user_username'=>$cek['user_username'],
             'user_password'=>$cek['user_password'],
             'user_pegawai_id'=>$cek['user_pegawai_id'],
-            'user_level'=>$cek['user_level'],            
+            'user_level'=>$cek['user_level'],
             'pegawai_nama'=>$peg['pegawai_nama'],
             'jabatan_nama'=>$peg['jabatan_nama']
           );
           // var_dump($session);exit;
           $this->session->set_flashdata('alert', 'success_login');
           $this->session->set_userdata($session);
-          redirect(base_url());
+          redirect(base_url('dashboard'));
         }else {
           $this->session->set_flashdata('alert', 'gagalLogin');
           redirect('login');

@@ -16,6 +16,7 @@
       // var_dump($this->session->userdata('pegawai_id'));die;
       $data['batasHari'] = $this->CutiModel->batas_id();
       $data['cuti'] = $this->CutiModel->tampil();
+
       $this->load->view("templates/header");
       $this->load->view("cuti/index",$data);
       $this->load->view("templates/footer");
@@ -242,6 +243,7 @@
     }
     public function cetak($id)
     {
+      
       $this->load->library('mypdf');
       $user1 = 'perencanaan';
       $user2 = 'organisasi';

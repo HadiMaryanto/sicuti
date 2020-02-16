@@ -32,7 +32,8 @@
         'user_username'=>$username,
         'user_password'=>md5($password),
         'user_pegawai_id'=>$idpeg,
-        'user_level'=>$level
+        'user_level'=>$level,
+        'user_level_hubungan'=>$this->input->post('level_hubungan')
       );
       $this->AkunModel->aktifkan($data);
       $this->session->set_flashdata('alert', 'berhasil_aktif');

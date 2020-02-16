@@ -35,6 +35,22 @@
       $this->db->where('izin_pegawai_id',$id);
       $this->db->update('tb_izin',$data);
     }
+    public function countIzin($konfirmasi)
+    {
+      $this->db->from('tb_izin');
+      $this->db->where('izin_status_pimpinan',$konfirmasi);
+      $this->db->where('izin_status_kepala_bidang',$konfirmasi);
+      $query = $this->db->get();
+      return $query->num_rows();
+    }
+    public function konfirIzin($konfirmasi)
+    {
+      $this->db->from('tb_izin');
+      $this->db->where('izin_status_pimpinan',$konfirmasi);
+      $this->db->where('izin_status_kepala_bidang',$konfirmasi);
+      $query = $this->db->get();
+      return $query->num_rows();
+    }
     public function lihat($id)
     {
       $this->db->from('tb_izin');

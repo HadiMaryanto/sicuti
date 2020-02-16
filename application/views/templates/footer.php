@@ -3,7 +3,7 @@
 				<div class="footer-left">
 					Copyright &copy; 2019
 					<div class="bullet"></div>
-					Design By <a href="#">Redstar</a>
+					Design By <a href="#">KP</a>
 				</div>
 				<div class="footer-right"></div>
 			</footer>

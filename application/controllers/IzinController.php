@@ -9,6 +9,7 @@
     {
       parent::__construct();
       $this->load->model('IzinModel');
+      $this->load->model('AkunModel');
       $this->load->model('PegawaiModel');
     }
     public function index()
@@ -167,50 +168,13 @@
     public function cetak($id)
     {
       $this->load->library('mypdf');
-      $user1 = 'perencanaan';
-      $user2 = 'organisasi';
-      $user3 = 'informasi';
-      $user4 = 'hukum';
-      $user5 = 'umum';
-      $user6 = 'pendidikan madrasah';
-      $user7 = 'pendidikan keagamaan';
-      $user8 = 'haji dan umrah';
-      $user9 = 'urusan agama';
-      $user10 = 'penerangan agama';
-      $user11 = 'masyarakat kristen';
-      $user12 = 'masyarakat hindu';
-      $user13 = 'masyarakat katolik';
-      $user14 = 'masyarakat budha';
 
-      $userA = $this->IzinModel->userA($user1);
-      $userB = $this->IzinModel->userB($user2);
-      $userC = $this->IzinModel->userC($user3);
-      $userD = $this->IzinModel->userD($user4);
-      $userE = $this->IzinModel->userE($user5);
-      $userF = $this->IzinModel->userF($user6);
-      $userG = $this->IzinModel->userG($user7);
-      $userH = $this->IzinModel->userH($user8);
-      $userI = $this->IzinModel->userI($user9);
-      $userJ = $this->IzinModel->userJ($user10);
-      $userK = $this->IzinModel->userK($user11);
-      $userL = $this->IzinModel->userL($user12);
-      $userM = $this->IzinModel->userM($user13);
-      $userN = $this->IzinModel->userN($user14);
-
-      $data['userA'] = $userA;
-      $data['userB'] = $userB;
-      $data['userC'] = $userC;
-      $data['userD'] = $userD;
-      $data['userE'] = $userE;
-      $data['userF'] = $userF;
-      $data['userG'] = $userG;
-      $data['userH'] = $userH;
-      $data['userI'] = $userI;
-      $data['userJ'] = $userJ;
-      $data['userK'] = $userK;
-      $data['userL'] = $userL;
-      $data['userM'] = $userM;
-      $data['userN'] = $userN;
+      $getData = $this->IzinModel->lihat($id);
+      $id_pegawai = $getData['izin_pegawai_id'];
+      $hubungan = $getData['user_level_hubungan'];
+      $data['sub_pimpinan'] = $this->AkunModel->get_dinamic_data('user_level',$hubungan);
+      // echo "<pre>";
+      // var_dump($sub_pimpinan);exit();
 
       $data['row'] = $this->IzinModel->lihat($id);
       $data['kepala'] = $this->IzinModel->kepala();

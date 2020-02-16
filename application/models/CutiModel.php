@@ -33,6 +33,22 @@
       $query = $this->db->get();
       return $query->row_array();
     }
+    public function countCuti($konfirmasi)
+    {
+      $this->db->from('tb_cuti');
+      $this->db->where('cuti_status_pimpinan',$konfirmasi);
+      $this->db->where('cuti_status_kepala_bidang',$konfirmasi);
+      $query = $this->db->get();
+      return $query->num_rows();
+    }
+    public function konfirCuti($konfirmasi)
+    {
+      $this->db->from('tb_cuti');
+      $this->db->where('cuti_status_pimpinan',$konfirmasi);
+      $this->db->where('cuti_status_kepala_bidang',$konfirmasi);
+      $query = $this->db->get();
+      return $query->num_rows();
+    }
     public function validasi($pegawai_id, $jenis, $tgl)
     {
       $this->db->from('tb_cuti');
@@ -52,6 +68,8 @@
       $query = $this->db->get();
       return $query->result_array();
     }
+
+
     public function tes2($id, $thn)
     {
       $this->db->from('tb_cuti');

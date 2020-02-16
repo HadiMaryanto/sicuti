@@ -18,6 +18,16 @@
       $query = $this->db->get();
       return $query->row_array();
     }
+    public function get_dinamic_data($field,$value)
+    {
+      $this->db->from('sicuti_user');
+      $this->db->where($field,$value);
+      $this->db->join('sicuti_pegawai','sicuti_pegawai.pegawai_id = sicuti_user.user_pegawai_id');
+      $this->db->join('sicuti_unit', 'sicuti_unit.unit_id = sicuti_pegawai.pegawai_unit_id');
+      $query = $this->db->get();
+      return $query->row_array();
+    }
+
     public function aktifkan($data)
     {
       $this->db->insert('sicuti_user',$data);

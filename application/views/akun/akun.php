@@ -87,7 +87,7 @@
 
                                 <form class="needs-validation" novalidate="" action="<?php echo base_url('akun/aktif/'.$value['pegawai_id'])?>" method="post">
                                   <div class="form-group">
-                                    <label>Aktifkan sebagai</label>
+                                    <label>Aktifkan sebagai  <i class="fa fa-help"></i></label>
                                     <div class="input-group">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text">
@@ -128,10 +128,33 @@
                                         <option value="pegawai masyarakat katolik">pegawai masyarakat katolik</option>
                                         <option value="pegawai masyarakat budha">pegawai masyarakat budha</option>
                                       </select>
+
                                       <div class="invalid-feedback">
                                         Field tidak boleh kosong
                                       </div>
                                     </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Level Hubungan</label>
+                                    <select class="form-control" name="level_hubungan">
+                                      <option value="">- Pilih -</option>
+                                      <option value="pimpinan">pimpinan</option>
+                                      <option value="kankemenag kab/kota">kankemenag kab/kota</option>
+                                      <option value="perencanaan">sub perencanaan</option>
+                                      <option value="organisasi">sub organisasi</option>
+                                      <option value="hukum">sub hukum</option>
+                                      <option value="informasi">sub informasi</option>
+                                      <option value="umum">sub umum</option>
+                                      <option value="pendidikan madrasah">pendidikan madrasah</option>
+                                      <option value="pendidikan keagamaan">pendidikan keagamaan</option>
+                                      <option value="haji dan umrah">haji dan umrah</option>
+                                      <option value="urusan agama">urusan agama</option>
+                                      <option value="penerangan agama">penerangan agama</option>
+                                      <option value="masyarakat kriten">masyarakat kriten</option>
+                                      <option value="masyarakat hindu">masyarakat hindu</option>
+                                      <option value="masyarakat katolik">masyarakat katolik</option>
+                                      <option value="masyarakat budha">masyarakat budha</option>
+                                    </select>
                                   </div>
                                   <input type="hidden" name="tipe">
                                   <button type="submit" class="btn btn-primary mr-1" name="submit">Submit</button>
