@@ -135,25 +135,25 @@
                                     </div>
                                   </div>
                                   <div class="form-group">
-                                    <label>Level Hubungan</label>
+                                    <label>Level Hubungan
+                                      <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanya Untuk Hak Akses Pegawai Tidak Untuk Pimpinan atau Sub Pimpinan">Arahkan Cursor
+                    </button><i style="color:red;"> *tidak wajib di isi </i></label>
                                     <select class="form-control" name="level_hubungan">
                                       <option value="">- Pilih -</option>
-                                      <option value="pimpinan">pimpinan</option>
-                                      <option value="kankemenag kab/kota">kankemenag kab/kota</option>
-                                      <option value="perencanaan">sub perencanaan</option>
-                                      <option value="organisasi">sub organisasi</option>
-                                      <option value="hukum">sub hukum</option>
-                                      <option value="informasi">sub informasi</option>
-                                      <option value="umum">sub umum</option>
-                                      <option value="pendidikan madrasah">pendidikan madrasah</option>
-                                      <option value="pendidikan keagamaan">pendidikan keagamaan</option>
-                                      <option value="haji dan umrah">haji dan umrah</option>
-                                      <option value="urusan agama">urusan agama</option>
-                                      <option value="penerangan agama">penerangan agama</option>
-                                      <option value="masyarakat kriten">masyarakat kriten</option>
-                                      <option value="masyarakat hindu">masyarakat hindu</option>
-                                      <option value="masyarakat katolik">masyarakat katolik</option>
-                                      <option value="masyarakat budha">masyarakat budha</option>
+                                      <option value="perencanaan">Pegawai Sub Perencanaan</option>
+                                      <option value="organisasi">Pegawai Sub Organisasi</option>
+                                      <option value="hukum">Pegawai Sub hukum</option>
+                                      <option value="informasi">Pegawai Sub Informasi</option>
+                                      <option value="umum">Pegawai Sub Umum</option>
+                                      <option value="pendidikan madrasah">Pegawai Pendidikan Madrasah</option>
+                                      <option value="pendidikan keagamaan">Pegawai Pendidikan Keagamaan</option>
+                                      <option value="haji dan umrah">Pegawai Haji dan Umrah</option>
+                                      <option value="urusan agama">Pegawai Urusan Agama</option>
+                                      <option value="penerangan agama">Pegawai Penerangan Agama</option>
+                                      <option value="masyarakat kriten">Pegawai Masyarakat Kriten</option>
+                                      <option value="masyarakat hindu">Pegawai Masyarakat Hindu</option>
+                                      <option value="masyarakat katolik">Pegawai Masyarakat Katolik</option>
+                                      <option value="masyarakat budha">Pegawai Masyarakat Budha</option>
                                     </select>
                                   </div>
                                   <input type="hidden" name="tipe">

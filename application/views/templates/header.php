@@ -125,13 +125,17 @@
 						<?php endif; ?> -->
 
 						<?php if (strpos($this->session->userdata('user_level'),'pegawai') === false): ?>
-							<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
-										data-feather="credit-card"></i><span>Persetujuan</span></a>
-								<ul class="dropdown-menu">
-									<li><a class="nav-link" href="<?php echo base_url('cuti'); ?>">Cuti</a></li>
-									<li><a class="nav-link" href="<?php echo base_url('izin'); ?>">Izin</a></li>
-								</ul>
-							</li>
+							<?php if ($this->session->userdata['user_level'] != 'admin'): ?>
+								<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
+											data-feather="credit-card"></i><span>Persetujuan</span></a>
+									<ul class="dropdown-menu">
+										<li><a class="nav-link" href="<?php echo base_url('cuti'); ?>">Cuti</a></li>
+										<li><a class="nav-link" href="<?php echo base_url('izin'); ?>">Izin</a></li>
+									</ul>
+								</li>
+							<?php endif; ?>
+
+
 
 							<?php else: ?>
 								<li class="dropdown"><a href="<?php echo base_url('cuti') ?>" ><i
